@@ -94,6 +94,8 @@ function guardarCelda(id, contenido) {
     } else {
         state[id].value = isNaN(contenido) || contenido === "" ? contenido : Number(contenido);
     }
+
+    actualizarUI(id); // Llama a la interfaz del Nivel 8
     
     // Recálculo en cascada (Nivel 4)
     if (dependencias[id]) {
@@ -270,4 +272,44 @@ document.addEventListener("DOMContentLoaded", () => {
         a.href = url; a.download = 'hojaclara.csv'; a.click();
     });
 
+// ===================================================
+// NIVEL 8: NAVEGACIÓN POR TECLADO Y ESTILOS VISUALES
+// ===================================================
+
+document.getElementById('hojaclara-container')?.addEventListener('keydown', (e) => {
+        if (!celdaActiva) return;
+        
+        let match = celdaActiva.match(/([A-Z]+)(\d+)/);
+        if (!match) return;
+        
+        let colStr = match[1];
+        let row = parseInt(match[2]);
+        let colIdx = convertirLetraANumero(colStr);
+        
+        if (e.key === 'ArrowUp') row = Math.max(1, row - 1);
+        if (e.key === 'ArrowDown' || e.key === 'Enter') { e.preventDefault(); row = Math.min(ROWS, row + 1); }
+        if (e.key === 'ArrowLeft') colIdx = Math.max(0, colIdx - 1);
+        if (e.key === 'ArrowRight' || e.key === 'Tab') { e.preventDefault(); colIdx = Math.min(COLS - 1, colIdx + 1); }
+        
+        let nuevoId = obtenerLetraCol(colIdx) + row;
+        document.getElementById(nuevoId)?.focus();
+    });
+});
+
+// Función de interfaz (Nivel 8) para actualizar visualmente
+function actualizarUI(id) {
+    const input = document.getElementById(id);
+    if (!input) return;
+    input.value = state[id].value;
     
+    input.classList.remove('cell-negative', 'cell-error');
+
+    // Negativos en rojo
+    if (!isNaN(state[id].value) && Number(state[id].value) < 0 && state[id].value !== "") {
+        input.classList.add('cell-negative');
+    }
+    // Errores con estilo especial
+    if (String(state[id].value).startsWith('#')) {
+        input.classList.add('cell-error');
+    }
+}
