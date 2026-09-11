@@ -107,7 +107,9 @@ function evaluarFormula(id) {
 
 function analizarExpresion(exp) {
     exp = exp.replace(/\s+/g, ''); // Quitar espacios
-
+    exp = procesarFunciones(exp);  // Llama al Nivel 5
+    exp = reemplazarReferencias(exp); // Llama al Nivel 4
+    
     function evaluarOperaciones(cadena) {
         if (!cadena) return 0;
         
@@ -123,8 +125,7 @@ function analizarExpresion(exp) {
         }
 
         let balance = 0;
-
-        // Sumas y restas 
+        // Sumas y restas
         for (let i = cadena.length - 1; i >= 0; i--) {
             if (cadena[i] === ')') balance++;
             if (cadena[i] === '(') balance--;
@@ -143,6 +144,9 @@ function analizarExpresion(exp) {
             if (balance === 0 && (cadena[i] === '*' || cadena[i] === '/')) {
                 let izq = evaluarOperaciones(cadena.substring(0, i));
                 let der = evaluarOperaciones(cadena.substring(i + 1));
+                if (cadena[i] === '/' && der === 0) throw new Error("#DIV/0!"); // Error del Nivel 6
+                return cadena[i] === '*' ? izq * der : izq / der;
+            }
         }
         
         let numero = parseFloat(cadena);
@@ -166,4 +170,42 @@ function reemplazarReferencias(cadena) {
     });
 }
 
+// ============================
+// NIVEL 5: FUNCIONES Y RANGOS
+// ============================
 
+function procesarFunciones(exp) {
+    return exp.replace(/(SUMA|PROMEDIO|MAX|MIN)\(([A-Z]+)(\d+):([A-Z]+)(\d+)\)/g, (match, funcion, colIniStr, rowIniStr, colFinStr, rowFinStr) => {
+        let valores = obtenerValoresRango(colIniStr, parseInt(rowIniStr), colFinStr, parseInt(rowFinStr));
+        if (valores.length === 0) return 0;
+
+        switch(funcion) {
+            case 'SUMA': return valores.reduce((a, b) => a + b, 0);
+            case 'PROMEDIO': return valores.reduce((a, b) => a + b, 0) / valores.length;
+            case 'MAX': return Math.max(...valores);
+            case 'MIN': return Math.min(...valores);
+            default: return 0;
+        }
+    });
+}
+
+function convertirLetraANumero(letra) {
+    let num = 0;
+    for (let i = 0; i < letra.length; i++) num = num * 26 + (letra.charCodeAt(i) - 64);
+    return num - 1; 
+}
+
+function obtenerValoresRango(colIniStr, rowIni, colFinStr, rowFin) {
+    let colIni = convertirLetraANumero(colIniStr);
+    let colFin = convertirLetraANumero(colFinStr);
+    let valores = [];
+    
+    for(let c = Math.min(colIni, colFin); c <= Math.max(colIni, colFin); c++) {
+        for(let r = Math.min(rowIni, rowFin); r <= Math.max(rowIni, rowFin); r++) {
+            let id = obtenerLetraCol(c) + r;
+            let val = Number(state[id]?.value);
+            if (!isNaN(val)) valores.push(val);
+        }
+    }
+    return valores;
+}
