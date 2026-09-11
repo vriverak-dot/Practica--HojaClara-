@@ -75,7 +75,7 @@ function guardarCelda(id, contenido) {
     // Extraer referencias para el Nivel 4 y Nivel 6
     let dependenciasDetectadas = contenido.startsWith('=') ? contenido.match(/[A-Z]+\d+/g) || [] : [];
     
-    // Validación del Nivel 6 (Evitar congelamiento)
+    // Validación del Nivel 6
     if (detectarCiclo(id, dependenciasDetectadas)) {
         state[id].value = "#CIRCULAR!";
         actualizarUI(id);
@@ -135,6 +135,7 @@ function analizarExpresion(exp) {
         }
 
         let balance = 0;
+
         // Sumas y restas
         for (let i = cadena.length - 1; i >= 0; i--) {
             if (cadena[i] === ')') balance++;
@@ -232,3 +233,41 @@ function detectarCiclo(id, dependenciasDetectadas) {
     return false;
 }
 
+// =====================================
+// NIVEL 7: PERSISTENCIA Y EXPORTACIÓN
+// =====================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Cargar datos si existen
+    const guardados = JSON.parse(localStorage.getItem('hojaclara_datos'));
+    if (guardados) {
+        ROWS = guardados.ROWS || 15; COLS = guardados.COLS || 10;
+        Object.assign(state, guardados.state);
+    }
+    
+    generarCuadricula(); // Inicia la aplicación (Llama al Nivel 1)
+
+    // 2. Guardar estado
+    document.getElementById('btn-save')?.addEventListener('click', () => {
+        localStorage.setItem('hojaclara_datos', JSON.stringify({ state, ROWS, COLS }));
+        alert('Guardado exitosamente.');
+    });
+
+    // 3. Exportar a CSV
+    document.getElementById('btn-csv')?.addEventListener('click', () => {
+        let csv = '';
+        for (let r = 1; r <= ROWS; r++) {
+            let fila = [];
+            for (let c = 0; c < COLS; c++) {
+                let id = obtenerLetraCol(c) + r;
+                fila.push(state[id] ? state[id].value : "");
+            }
+            csv += fila.join(',') + '\n';
+        }
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'hojaclara.csv'; a.click();
+    });
+
+    
