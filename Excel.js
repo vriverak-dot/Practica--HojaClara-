@@ -71,6 +71,16 @@ let celdaActiva = null;
 
 function guardarCelda(id, contenido) {
     state[id].raw = contenido;
+    
+    // Extraer referencias para el Nivel 4 y Nivel 6
+    let dependenciasDetectadas = contenido.startsWith('=') ? contenido.match(/[A-Z]+\d+/g) || [] : [];
+    
+    // Validación del Nivel 6 (Evitar congelamiento)
+    if (detectarCiclo(id, dependenciasDetectadas)) {
+        state[id].value = "#CIRCULAR!";
+        actualizarUI(id);
+        return;
+    }
 
     // Registro de dependencias (Nivel 4)
     dependenciasDetectadas.forEach(dep => {
@@ -209,3 +219,16 @@ function obtenerValoresRango(colIniStr, rowIni, colFinStr, rowFin) {
     }
     return valores;
 }
+
+// ===============================
+// NIVEL 6: PREVENCIÓN DE ERRORES
+// ===============================
+
+function detectarCiclo(id, dependenciasDetectadas) {
+    for (let dep of dependenciasDetectadas) {
+        if (dep === id) return true; // Celdas que se llaman a sí mismas (Ej: A1 = A1 + 1)
+        if (dependencias[id] && dependencias[id].includes(dep)) return true; // Ciclo cruzado
+    }
+    return false;
+}
+
