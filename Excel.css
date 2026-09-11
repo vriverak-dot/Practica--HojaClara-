@@ -1,0 +1,91 @@
+body { 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    margin: 0; 
+    padding: 20px; 
+    background-color: #f4f5f7; 
+}
+
+.toolbar { 
+    margin-bottom: 15px; 
+    background: white; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toolbar h2 { 
+    margin: 0; 
+    color: #2e7d32; 
+}
+
+.toolbar button {
+    padding: 6px 12px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.toolbar button:hover {
+    background-color: #f0f0f0;
+    border-color: #adadad;
+}
+
+.toolbar p {
+    margin: 0;
+    margin-left: auto;
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Tabla y celdas */
+
+#current-cell {
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+#hojaclara-container {
+    overflow-x: auto;
+}
+
+table { 
+    border-collapse: collapse; 
+    background: white; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+}
+
+th, td { 
+    border: 1px solid #ccc; 
+    padding: 0; 
+    text-align: center; 
+}
+
+th { 
+    background-color: #f3f3f3; 
+    padding: 5px 15px; 
+    color: #333; 
+    font-weight: normal; 
+    user-select: none;
+}
+
+td input { 
+    width: 80px; 
+    height: 25px; 
+    border: none; 
+    padding: 0 5px; 
+    outline: none; 
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+td input:focus { 
+    border: 2px solid #2e7d32; 
+    background-color: #e8f5e9; 
+}
