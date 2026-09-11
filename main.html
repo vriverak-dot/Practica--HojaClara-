@@ -2,21 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel - HojaClara</title>
     <link rel="stylesheet" href="Excel.css">
     <link rel="icon" href="https://images.icon-icons.com/1826/PNG/512/4202106excellogomicrosoftms-115582_115719.png" type="image/png"> 
-    <script src="main.js" defer></script>
+    <script src="Excel.js" defer></script>
 </head>
 <body>
     <div class="toolbar">
         <img src="https://images.icon-icons.com/1826/PNG/512/4202106excellogomicrosoftms-115582_115719.png" alt="Excel Logo" width="30">
 
+        <h2>HojaClara</h2>
+        
         <!-- Botones de la barra de herramientas -->
         <button id="add-row">+ Fila</button>
         <button id="add-column">+ Columna</button>
         <button id="delete-row">- Fila</button>
         <button id="delete-column">- Columna</button>
+        
         <span class="divider">|</span>
+        
+        <!-- Botones del Nivel 7 -->
+        <button id="btn-save">Guardar</button>
+        <button id="btn-csv">Exportar CSV</button>
+
         <p>Celda seleccionada: <span id="current-cell">-</span></p>
     </div>
     
