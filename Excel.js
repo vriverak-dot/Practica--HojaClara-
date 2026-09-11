@@ -66,13 +66,11 @@ function generarCuadricula() {
 // NIVEL 2: ESTADO INDEPENDIENTE Y LÓGICA DE EDICIÓN
 // ==================================================
 
-const state = {}; // Guarda  el contenido original y el valor evaluado de cada celda
+const state = {}; // Guarda { raw: "=A1+2", value: 5 }
 let celdaActiva = null;
 
 function guardarCelda(id, contenido) {
     state[id].raw = contenido;
-    
-    }
 
     // Guardado y evaluación
     if (contenido.startsWith('=')) {
@@ -80,3 +78,67 @@ function guardarCelda(id, contenido) {
     } else {
         state[id].value = isNaN(contenido) || contenido === "" ? contenido : Number(contenido);
     }
+}
+
+// ===========================
+// NIVEL 3: MOTOR MATEMÁTICO
+// ===========================
+
+function evaluarFormula(id) {
+    let formula = state[id].raw.substring(1).toUpperCase(); 
+    try {
+        state[id].value = analizarExpresion(formula);
+    } catch (e) {
+        // Nivel 6: Manejo de Errores Matemáticos
+        state[id].value = e.message.startsWith('#') ? e.message : "#ERROR!";
+    }
+}
+
+function analizarExpresion(exp) {
+    exp = exp.replace(/\s+/g, ''); // Quitar espacios
+
+    function evaluarOperaciones(cadena) {
+        if (!cadena) return 0;
+        
+        // Resolver paréntesis
+        if (cadena.startsWith('(') && cadena.endsWith(')')) {
+            let bal = 0; let bloqueUnico = true;
+            for(let i=0; i<cadena.length-1; i++) {
+                if(cadena[i] === '(') bal++;
+                if(cadena[i] === ')') bal--;
+                if(bal === 0) { bloqueUnico = false; break; }
+            }
+            if(bloqueUnico) return evaluarOperaciones(cadena.substring(1, cadena.length-1));
+        }
+
+        let balance = 0;
+
+        // Sumas y restas 
+        for (let i = cadena.length - 1; i >= 0; i--) {
+            if (cadena[i] === ')') balance++;
+            if (cadena[i] === '(') balance--;
+            if (balance === 0 && (cadena[i] === '+' || (cadena[i] === '-' && i > 0 && !'+-*/('.includes(cadena[i-1])))) {
+                let izq = evaluarOperaciones(cadena.substring(0, i));
+                let der = evaluarOperaciones(cadena.substring(i + 1));
+                return cadena[i] === '+' ? izq + der : izq - der;
+            }
+        }
+        
+        // Multiplicaciones y divisiones
+        balance = 0;
+        for (let i = cadena.length - 1; i >= 0; i--) {
+            if (cadena[i] === ')') balance++;
+            if (cadena[i] === '(') balance--;
+            if (balance === 0 && (cadena[i] === '*' || cadena[i] === '/')) {
+                let izq = evaluarOperaciones(cadena.substring(0, i));
+                let der = evaluarOperaciones(cadena.substring(i + 1));
+                return cadena[i] === '*' ? izq * der : izq / der;
+            }
+        }
+        
+        let numero = parseFloat(cadena);
+        if (isNaN(numero)) throw new Error("#ERROR!");
+        return numero;
+    }
+    return evaluarOperaciones(exp);
+}
