@@ -61,3 +61,22 @@ function generarCuadricula() {
     }
     container.appendChild(table);
 }
+
+// ==================================================
+// NIVEL 2: ESTADO INDEPENDIENTE Y LÓGICA DE EDICIÓN
+// ==================================================
+
+const state = {}; // Guarda  el contenido original y el valor evaluado de cada celda
+let celdaActiva = null;
+
+function guardarCelda(id, contenido) {
+    state[id].raw = contenido;
+    
+    }
+
+    // Guardado y evaluación
+    if (contenido.startsWith('=')) {
+        evaluarFormula(id); // Llama al motor del Nivel 3
+    } else {
+        state[id].value = isNaN(contenido) || contenido === "" ? contenido : Number(contenido);
+    }
