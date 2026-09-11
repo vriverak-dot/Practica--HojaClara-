@@ -72,11 +72,22 @@ let celdaActiva = null;
 function guardarCelda(id, contenido) {
     state[id].raw = contenido;
 
+    // Registro de dependencias (Nivel 4)
+    dependenciasDetectadas.forEach(dep => {
+        if (!dependencias[dep]) dependencias[dep] = [];
+        if (!dependencias[dep].includes(id)) dependencias[dep].push(id);
+    });
+
     // Guardado y evaluación
     if (contenido.startsWith('=')) {
         evaluarFormula(id); // Llama al motor del Nivel 3
     } else {
         state[id].value = isNaN(contenido) || contenido === "" ? contenido : Number(contenido);
+    }
+    
+    // Recálculo en cascada (Nivel 4)
+    if (dependencias[id]) {
+        dependencias[id].forEach(celdaDependiente => guardarCelda(celdaDependiente, state[celdaDependiente].raw));
     }
 }
 
@@ -132,8 +143,6 @@ function analizarExpresion(exp) {
             if (balance === 0 && (cadena[i] === '*' || cadena[i] === '/')) {
                 let izq = evaluarOperaciones(cadena.substring(0, i));
                 let der = evaluarOperaciones(cadena.substring(i + 1));
-                return cadena[i] === '*' ? izq * der : izq / der;
-            }
         }
         
         let numero = parseFloat(cadena);
@@ -142,3 +151,19 @@ function analizarExpresion(exp) {
     }
     return evaluarOperaciones(exp);
 }
+
+// ====================================
+// NIVEL 4: DEPENDENCIAS Y REFERENCIAS
+// ====================================
+
+const dependencias = {}; // Almacena qué celdas afectan a cuáles
+
+function reemplazarReferencias(cadena) {
+    return cadena.replace(/[A-Z]+\d+/g, (match) => {
+        let valorCelda = state[match] ? state[match].value : 0;
+        if (String(valorCelda).startsWith('#')) throw new Error(valorCelda);
+        return isNaN(valorCelda) || valorCelda === "" ? 0 : valorCelda; 
+    });
+}
+
+
