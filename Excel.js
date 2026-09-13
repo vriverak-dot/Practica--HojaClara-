@@ -58,7 +58,7 @@ function generarCuadricula() {
                     indicadorCelda.textContent = id;
                 }
             });
-            
+
             input.addEventListener('blur', (e) => guardarCelda(id, e.target.value));
 
             td.appendChild(input); 
@@ -278,6 +278,32 @@ document.addEventListener("DOMContentLoaded", () => {
         const a = document.createElement('a');
         a.href = url; a.download = 'hojaclara.csv'; a.click();
     });
+
+    // 4. Agregar y quitar filas o columnas
+    document.getElementById('add-row')?.addEventListener('click', () => {
+        ROWS++;
+        generarCuadricula();
+    });
+
+    document.getElementById('delete-row')?.addEventListener('click', () => {
+        if (ROWS > 1) { // Evita que la tabla se quede sin filas
+            ROWS--;
+            generarCuadricula();
+        }
+    });
+
+    document.getElementById('add-column')?.addEventListener('click', () => {
+        COLS++;
+        generarCuadricula();
+    });
+
+    document.getElementById('delete-column')?.addEventListener('click', () => {
+        if (COLS > 1) { // Evita que la tabla se quede sin columnas
+            COLS--;
+            generarCuadricula();
+        }
+    });
+
 
 // ===================================================
 // NIVEL 8: NAVEGACIÓN POR TECLADO Y ESTILOS VISUALES
