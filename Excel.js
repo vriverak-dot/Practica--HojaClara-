@@ -46,12 +46,19 @@ function generarCuadricula() {
             const input = document.createElement('input');
             input.id = id; 
             input.value = state[id].value;
-            
+
             // Eventos del Nivel 2 (Interacción)
             input.addEventListener('focus', () => {
                 celdaActiva = id;
                 input.value = state[id].raw; // Muestra fórmula original al editar
+                
+                // Actualiza el texto de la celda en la barra de herramientas
+                const indicadorCelda = document.getElementById('current-cell');
+                if (indicadorCelda) {
+                    indicadorCelda.textContent = id;
+                }
             });
+            
             input.addEventListener('blur', (e) => guardarCelda(id, e.target.value));
 
             td.appendChild(input); 
