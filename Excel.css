@@ -102,3 +102,8 @@ td input:focus {
     color: #b71c1c !important; /* Texto rojo oscuro */
     font-weight: bold;
 }
+
+td input.selected-range {
+    background-color: #d2e3fc !important; /* Azul claro estilo Google Sheets/Excel */
+    border: 1px solid #1a73e8 !important;
+}

@@ -61,6 +61,19 @@ function generarCuadricula() {
 
             input.addEventListener('blur', (e) => guardarCelda(id, e.target.value));
 
+            //Eventos de las lineas de selección multiple.
+            input.addEventListener('mousedown', (e) => {
+                esSeleccionando = true;
+                celdaInicioSel = id;
+                seleccionarRangoCeldas(id);
+            });
+
+            input.addEventListener('mouseenter', () => {
+                if (esSeleccionando) {
+                    seleccionarRangoCeldas(id);
+                }
+            });
+
             td.appendChild(input); 
             tr.appendChild(td);
         }
@@ -346,3 +359,52 @@ function actualizarUI(id) {
         input.classList.add('cell-error');
     }
 }
+
+// ==============================
+// SELECCIÓN MÚLTIPLE DE CELDAS 
+// ==============================
+let esSeleccionando = false;
+let celdaInicioSel = null;
+
+function limpiarSeleccionVisual() {
+    document.querySelectorAll('td input').forEach(input => {
+        input.classList.remove('selected-range');
+    });
+}
+
+function seleccionarRangoCeldas(idFin) {
+    limpiarSeleccionVisual();
+    if (!celdaInicioSel || !idFin) return;
+
+    let matchIni = celdaInicioSel.match(/([A-Z]+)(\d+)/);
+    let matchFin = idFin.match(/([A-Z]+)(\d+)/);
+
+    if (!matchIni || !matchFin) return;
+
+    // Convertimos las letras en números
+    let colIni = convertirLetraANumero(matchIni[1]);
+    let rowIni = parseInt(matchIni[2]);
+    let colFin = convertirLetraANumero(matchFin[1]);
+    let rowFin = parseInt(matchFin[2]);
+
+    // Calculamos los límites del rectángulo de selección
+    let minCol = Math.min(colIni, colFin);
+    let maxCol = Math.max(colIni, colFin);
+    let minRow = Math.min(rowIni, rowFin);
+    let maxRow = Math.max(rowIni, rowFin);
+
+    // Resaltamos todas las celdas dentro de la caja delimitadora
+    for (let c = minCol; c <= maxCol; c++) {
+        for (let r = minRow; r <= maxRow; r++) {
+            let cellId = obtenerLetraCol(c) + r;
+            document.getElementById(cellId)?.classList.add('selected-range');
+        }
+    }
+}
+
+// Detener la selección cuando el usuario suelte el clic en cualquier parte de la pantalla
+document.addEventListener('mouseup', () => {
+    esSeleccionando = false;
+});
+
+
