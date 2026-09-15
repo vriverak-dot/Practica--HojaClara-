@@ -317,6 +317,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    //5. Mayúsculas
+    document.getElementById('btn-uppercase')?.addEventListener('click', () => {
+        if (!celdaActiva) {
+            alert("Selecciona una celda primero");
+            return;
+        }
+
+        let texto = String(state[celdaActiva].raw || "");
+        guardarCelda(celdaActiva, texto.toUpperCase());
+    })
+
 
 // ===================================================
 // NIVEL 8: NAVEGACIÓN POR TECLADO Y ESTILOS VISUALES
