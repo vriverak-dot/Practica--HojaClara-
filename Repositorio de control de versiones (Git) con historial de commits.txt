@@ -1,0 +1,380 @@
+
+rvivi@Viv_Rivera MINGW64 ~/OneDrive/Escritorio/Practica/Codigo (main)
+$ git log
+commit e8f9c8af45c5847e1b486f2aac120493f29aca1e (HEAD -> main)
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 04:35:05 2026 -0600
+
+    CAMBIOS: SE AÑADIO EL BOTÓN MAYÚSCULAS PARA MODIFICAR EL TEXTO
+
+commit d9d35578e523e31273443e173a624ee6e420425f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 02:29:52 2026 -0600
+
+    CAMBIOS PARA AÑADIR LA OPCIÓN MULTIPLE DE CELDAS
+
+commit b90e596c78e335891213b0ee3ff3eb383be48146
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:39:17 2026 -0600
+
+    CORRECCIÓN: Se agregó un fragmento al código para agregar la función de los botones.
+
+commit db5452cf962ad47eadaf801e09e378fb597bba4e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:34:31 2026 -0600
+
+    CORRECCIÓN PARA QUE LA BARRA DE HERRAMIENTAS MUESTRE EL TEXTO DE LA CELDA AL EDITA
+
+commit 24ab071aa548db3436cc1a4bf159b62abe91b6ce
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+:
+commit e8f9c8af45c5847e1b486f2aac120493f29aca1e (HEAD -> main)
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 04:35:05 2026 -0600
+
+    CAMBIOS: SE AÑADIO EL BOTÓN MAYÚSCULAS PARA MODIFICAR EL TEXTO
+
+commit d9d35578e523e31273443e173a624ee6e420425f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 02:29:52 2026 -0600
+
+    CAMBIOS PARA AÑADIR LA OPCIÓN MULTIPLE DE CELDAS
+
+commit b90e596c78e335891213b0ee3ff3eb383be48146
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:39:17 2026 -0600
+
+    CORRECCIÓN: Se agregó un fragmento al código para agregar la función de los botones.
+
+commit db5452cf962ad47eadaf801e09e378fb597bba4e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:34:31 2026 -0600
+
+    CORRECCIÓN PARA QUE LA BARRA DE HERRAMIENTAS MUESTRE EL TEXTO DE LA CELDA AL EDITA
+
+commit 24ab071aa548db3436cc1a4bf159b62abe91b6ce
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:42:05 2026 -0600
+
+    CORRECCIÓN DE TITULO: Se ha corregido el título
+
+commit ebef3f408b83d2147d26571de0a389e63d55b4fd
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:39:20 2026 -0600
+
+    CORRECCIÓN DEL ARCHIVO main.html Y ACTUALIZACIÓN DE Excel.js Y Excel.css
+
+commit dd87596b91218124f23c0866ecbbb7f972f47e0f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:35:41 2026 -0600
+
+    CAMBIOS A CSS PARA INCLUIR LAS CONDICIONES DE ESTILO DEL NIVEL 8
+
+commit c1d3ed5fd24fdcd993c7742ee43269a1c0ef5572
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:32:45 2026 -0600
+
+:
+commit e8f9c8af45c5847e1b486f2aac120493f29aca1e (HEAD -> main)
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 04:35:05 2026 -0600
+
+    CAMBIOS: SE AÑADIO EL BOTÓN MAYÚSCULAS PARA MODIFICAR EL TEXTO
+
+commit d9d35578e523e31273443e173a624ee6e420425f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 02:29:52 2026 -0600
+
+    CAMBIOS PARA AÑADIR LA OPCIÓN MULTIPLE DE CELDAS
+
+commit b90e596c78e335891213b0ee3ff3eb383be48146
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:39:17 2026 -0600
+
+    CORRECCIÓN: Se agregó un fragmento al código para agregar la función de los botones.
+
+commit db5452cf962ad47eadaf801e09e378fb597bba4e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:34:31 2026 -0600
+
+    CORRECCIÓN PARA QUE LA BARRA DE HERRAMIENTAS MUESTRE EL TEXTO DE LA CELDA AL EDITA
+
+commit 24ab071aa548db3436cc1a4bf159b62abe91b6ce
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:42:05 2026 -0600
+
+    CORRECCIÓN DE TITULO: Se ha corregido el título
+
+commit ebef3f408b83d2147d26571de0a389e63d55b4fd
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:39:20 2026 -0600
+
+    CORRECCIÓN DEL ARCHIVO main.html Y ACTUALIZACIÓN DE Excel.js Y Excel.css
+
+commit dd87596b91218124f23c0866ecbbb7f972f47e0f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:35:41 2026 -0600
+
+    CAMBIOS A CSS PARA INCLUIR LAS CONDICIONES DE ESTILO DEL NIVEL 8
+
+commit c1d3ed5fd24fdcd993c7742ee43269a1c0ef5572
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:32:45 2026 -0600
+
+    NIVEL 8: INTERFAZ DE USUARIO Y ESTILOS VISUALES
+
+commit ed49931a936d76569c8396df5cf32c0ccc8a0311
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:29:52 2026 -0600
+
+    NIVEL 7: PERSISTENCIA Y EXPORTACIÓN
+
+commit 551cac81e7259efa34bd94a2323c088d9885418e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:25:26 2026 -0600
+
+    NIVEL 6: PREVENCIÓN DE ERRORES DE CICLO
+
+commit 5f0a694efd5df27a7bd68d8a949ec0f962a77a40
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:20:17 2026 -0600
+
+:
+commit e8f9c8af45c5847e1b486f2aac120493f29aca1e (HEAD -> main)
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 04:35:05 2026 -0600
+
+    CAMBIOS: SE AÑADIO EL BOTÓN MAYÚSCULAS PARA MODIFICAR EL TEXTO
+
+commit d9d35578e523e31273443e173a624ee6e420425f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 02:29:52 2026 -0600
+
+    CAMBIOS PARA AÑADIR LA OPCIÓN MULTIPLE DE CELDAS
+
+commit b90e596c78e335891213b0ee3ff3eb383be48146
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:39:17 2026 -0600
+
+    CORRECCIÓN: Se agregó un fragmento al código para agregar la función de los botones.
+
+commit db5452cf962ad47eadaf801e09e378fb597bba4e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:34:31 2026 -0600
+
+    CORRECCIÓN PARA QUE LA BARRA DE HERRAMIENTAS MUESTRE EL TEXTO DE LA CELDA AL EDITA
+
+commit 24ab071aa548db3436cc1a4bf159b62abe91b6ce
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:42:05 2026 -0600
+
+    CORRECCIÓN DE TITULO: Se ha corregido el título
+
+commit ebef3f408b83d2147d26571de0a389e63d55b4fd
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:39:20 2026 -0600
+
+    CORRECCIÓN DEL ARCHIVO main.html Y ACTUALIZACIÓN DE Excel.js Y Excel.css
+
+commit dd87596b91218124f23c0866ecbbb7f972f47e0f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:35:41 2026 -0600
+
+    CAMBIOS A CSS PARA INCLUIR LAS CONDICIONES DE ESTILO DEL NIVEL 8
+
+commit c1d3ed5fd24fdcd993c7742ee43269a1c0ef5572
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:32:45 2026 -0600
+
+:
+commit e8f9c8af45c5847e1b486f2aac120493f29aca1e (HEAD -> main)
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 04:35:05 2026 -0600
+
+    CAMBIOS: SE AÑADIO EL BOTÓN MAYÚSCULAS PARA MODIFICAR EL TEXTO
+
+commit d9d35578e523e31273443e173a624ee6e420425f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 02:29:52 2026 -0600
+
+    CAMBIOS PARA AÑADIR LA OPCIÓN MULTIPLE DE CELDAS
+
+commit b90e596c78e335891213b0ee3ff3eb383be48146
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:39:17 2026 -0600
+
+    CORRECCIÓN: Se agregó un fragmento al código para agregar la función de los botones.
+
+commit db5452cf962ad47eadaf801e09e378fb597bba4e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:34:31 2026 -0600
+
+    CORRECCIÓN PARA QUE LA BARRA DE HERRAMIENTAS MUESTRE EL TEXTO DE LA CELDA AL EDITA
+
+commit 24ab071aa548db3436cc1a4bf159b62abe91b6ce
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:42:05 2026 -0600
+
+    CORRECCIÓN DE TITULO: Se ha corregido el título
+
+commit ebef3f408b83d2147d26571de0a389e63d55b4fd
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:39:20 2026 -0600
+
+    CORRECCIÓN DEL ARCHIVO main.html Y ACTUALIZACIÓN DE Excel.js Y Excel.css
+
+commit dd87596b91218124f23c0866ecbbb7f972f47e0f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:35:41 2026 -0600
+
+    CAMBIOS A CSS PARA INCLUIR LAS CONDICIONES DE ESTILO DEL NIVEL 8
+
+commit c1d3ed5fd24fdcd993c7742ee43269a1c0ef5572
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:32:45 2026 -0600
+
+    NIVEL 8: INTERFAZ DE USUARIO Y ESTILOS VISUALES
+
+commit ed49931a936d76569c8396df5cf32c0ccc8a0311
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:29:52 2026 -0600
+
+    NIVEL 7: PERSISTENCIA Y EXPORTACIÓN
+
+commit 551cac81e7259efa34bd94a2323c088d9885418e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:25:26 2026 -0600
+
+    NIVEL 6: PREVENCIÓN DE ERRORES DE CICLO
+:
+commit e8f9c8af45c5847e1b486f2aac120493f29aca1e (HEAD -> main)
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 04:35:05 2026 -0600
+
+    CAMBIOS: SE AÑADIO EL BOTÓN MAYÚSCULAS PARA MODIFICAR EL TEXTO
+
+commit d9d35578e523e31273443e173a624ee6e420425f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 02:29:52 2026 -0600
+
+    CAMBIOS PARA AÑADIR LA OPCIÓN MULTIPLE DE CELDAS
+
+commit b90e596c78e335891213b0ee3ff3eb383be48146
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:39:17 2026 -0600
+
+    CORRECCIÓN: Se agregó un fragmento al código para agregar la función de los botones.
+
+commit db5452cf962ad47eadaf801e09e378fb597bba4e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:34:31 2026 -0600
+
+    CORRECCIÓN PARA QUE LA BARRA DE HERRAMIENTAS MUESTRE EL TEXTO DE LA CELDA AL EDITA
+
+commit 24ab071aa548db3436cc1a4bf159b62abe91b6ce
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:42:05 2026 -0600
+
+    CORRECCIÓN DE TITULO: Se ha corregido el título
+
+commit ebef3f408b83d2147d26571de0a389e63d55b4fd
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:39:20 2026 -0600
+
+    CORRECCIÓN DEL ARCHIVO main.html Y ACTUALIZACIÓN DE Excel.js Y Excel.css
+
+commit dd87596b91218124f23c0866ecbbb7f972f47e0f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:35:41 2026 -0600
+
+    CAMBIOS A CSS PARA INCLUIR LAS CONDICIONES DE ESTILO DEL NIVEL 8
+
+commit c1d3ed5fd24fdcd993c7742ee43269a1c0ef5572
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:32:45 2026 -0600
+
+    NIVEL 8: INTERFAZ DE USUARIO Y ESTILOS VISUALES
+
+commit ed49931a936d76569c8396df5cf32c0ccc8a0311
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:29:52 2026 -0600
+
+    NIVEL 7: PERSISTENCIA Y EXPORTACIÓN
+
+commit 551cac81e7259efa34bd94a2323c088d9885418e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:25:26 2026 -0600
+
+    NIVEL 6: PREVENCIÓN DE ERRORES DE CICLO
+
+commit 5f0a694efd5df27a7bd68d8a949ec0f962a77a40
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:20:17 2026 -0600
+
+    NIVEL 5: FUNCIONES Y RANGOS
+
+:
+commit e8f9c8af45c5847e1b486f2aac120493f29aca1e (HEAD -> main)
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 04:35:05 2026 -0600
+
+    CAMBIOS: SE AÑADIO EL BOTÓN MAYÚSCULAS PARA MODIFICAR EL TEXTO
+
+commit d9d35578e523e31273443e173a624ee6e420425f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Tue Sep 15 02:29:52 2026 -0600
+
+    CAMBIOS PARA AÑADIR LA OPCIÓN MULTIPLE DE CELDAS
+
+commit b90e596c78e335891213b0ee3ff3eb383be48146
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:39:17 2026 -0600
+
+    CORRECCIÓN: Se agregó un fragmento al código para agregar la función de los botones.
+
+commit db5452cf962ad47eadaf801e09e378fb597bba4e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Sat Sep 12 23:34:31 2026 -0600
+
+    CORRECCIÓN PARA QUE LA BARRA DE HERRAMIENTAS MUESTRE EL TEXTO DE LA CELDA AL EDITA
+
+commit 24ab071aa548db3436cc1a4bf159b62abe91b6ce
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:42:05 2026 -0600
+
+    CORRECCIÓN DE TITULO: Se ha corregido el título
+
+commit ebef3f408b83d2147d26571de0a389e63d55b4fd
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:39:20 2026 -0600
+
+    CORRECCIÓN DEL ARCHIVO main.html Y ACTUALIZACIÓN DE Excel.js Y Excel.css
+
+commit dd87596b91218124f23c0866ecbbb7f972f47e0f
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:35:41 2026 -0600
+
+    CAMBIOS A CSS PARA INCLUIR LAS CONDICIONES DE ESTILO DEL NIVEL 8
+
+commit c1d3ed5fd24fdcd993c7742ee43269a1c0ef5572
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:32:45 2026 -0600
+
+    NIVEL 8: INTERFAZ DE USUARIO Y ESTILOS VISUALES
+
+commit ed49931a936d76569c8396df5cf32c0ccc8a0311
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:29:52 2026 -0600
+
+    NIVEL 7: PERSISTENCIA Y EXPORTACIÓN
+
+commit 551cac81e7259efa34bd94a2323c088d9885418e
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:25:26 2026 -0600
+
+    NIVEL 6: PREVENCIÓN DE ERRORES DE CICLO
+
+commit 5f0a694efd5df27a7bd68d8a949ec0f962a77a40
+Author: vriverak-dot <vriverak@miumg.edu.gt>
+Date:   Fri Sep 11 00:20:17 2026 -0600
+:
